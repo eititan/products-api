@@ -1,7 +1,5 @@
 <?php
-
 use Illuminate\Database\Seeder;
-
 class ProductsTableSeeder extends Seeder
 {
     /**
@@ -11,6 +9,6 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $products = factory(Product::class, 10)->create();
     }
 }
