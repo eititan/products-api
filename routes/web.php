@@ -10,7 +10,10 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->group(['prefix'=>'products'], function() use($router) {
+    $router->get('/', 'ProductController@index');
+    $router->post('/', 'ProductController@create');
+    $router->get('/{id}', 'ProductController@show');
+    $router->put('/{id}', 'ProductController@update');
+    $router->delete('/{id}', 'ProductController@destroy');
 });
